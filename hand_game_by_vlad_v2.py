@@ -24,7 +24,7 @@ while True:
 
     counter_first_input += 1
 
-    choices = ['rock', 'paper', 'scissors']
+    choices = ['Rock', 'Paper', 'Scissors']
     computer_move = random.choice(choices)
 
     print(f"\nYou chose {player_move}. The computer chose {computer_move}.")
@@ -52,7 +52,7 @@ while True:
 
 print("\n--- Final Result ---")
 if counter_win > counter_lose:
-    success_rate = ((counter_win + counter_lose)) * 100
+    success_rate = (counter_win / (counter_win + counter_lose)) * 100
     print(f"Congratulations! You won the series with a success rate of {success_rate:.2f}%.")
 elif counter_win == counter_lose:
     print("The series ends in a draw!")
