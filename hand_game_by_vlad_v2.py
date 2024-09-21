@@ -7,9 +7,10 @@ scissors = 'Scissors'
 counter_win = 0
 counter_draw = 0
 counter_lose = 0
+counter_first_input = 0
 
-for i in range(3):
-    user_command = input("\nChoose [r]ock, [p]aper, or [s]cissors: ").lower()
+while True:
+    user_command = input("\nChoose [r]ock, [p]aper, or [s]cissors: ").lower().strip()
 
     if user_command == 'r':
         player_move = rock
@@ -18,7 +19,10 @@ for i in range(3):
     elif user_command == 's':
         player_move = scissors
     else:
-        raise SystemExit("Invalid Input. Please try again...")
+        print("Invalid Input. Please try again...")
+        continue
+
+    counter_first_input += 1
 
     computer_random_number = random.randint(1, 3)
     if computer_random_number == 1:
@@ -49,7 +53,11 @@ for i in range(3):
         print("You lose this round!")
         counter_lose += 1
 
-    print(f"Current score after game {i + 1}/3: [Wins: {counter_win}] [Draws: {counter_draw}] [Losses: {counter_lose}]")
+    print(f"Current score after game {counter_first_input}/3:\
+    [Wins: {counter_win}] [Draws: {counter_draw}] [Losses: {counter_lose}]")
+
+    if counter_first_input == 3:
+        break
 
 print("\n--- Final Result ---")
 if counter_win > counter_lose:
