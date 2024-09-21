@@ -52,7 +52,7 @@ while True:
 
 print("\n--- Final Result ---")
 if counter_win > counter_lose:
-    success_rate = (counter_win / 3) * 100
+    success_rate = ((counter_win + counter_lose)) * 100
     print(f"Congratulations! You won the series with a success rate of {success_rate:.2f}%.")
 elif counter_win == counter_lose:
     print("The series ends in a draw!")
